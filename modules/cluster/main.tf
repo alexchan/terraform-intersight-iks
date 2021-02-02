@@ -17,7 +17,7 @@ resource "intersight_kubernetes_cluster_profile" "cluster" {
   management_config {
     load_balancer_count = 1
     ssh_keys = [
-      "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBl8AgXK9Ypm5prmzRnuhDs9WqExSDOsoduwQYVF6jSqheKnDv4ThPXTp2xWkVIhRFwOjFXuHYOF7E35cOy/c34= jusbarks@JUSBARKS-M-D2JU"
+      ""
     ]
     ssh_user = "iksadmin"
   }
