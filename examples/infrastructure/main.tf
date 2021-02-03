@@ -9,7 +9,7 @@ data "intersight_organization_organization" "organization" {
 
 module "iks_worker_instance_type" {
 
-  source               = "../modules/worker_profile"
+  source               = "../../modules/worker_profile"
   for_each             = { for instance in var.instance_type : instance.name => instance }
   org_name             = var.organization
   instance_type_name   = each.value.name
@@ -21,7 +21,7 @@ module "iks_worker_instance_type" {
 }
 module "iks_network_policies" {
 
-  source   = "../modules/network"
+  source   = "../../modules/network"
   org_name = var.organization
   # Kubernetes Network Policy
   network_policy_list = var.network_policy_list
@@ -29,27 +29,28 @@ module "iks_network_policies" {
 
 }
 module "network_ip_pool" {
-  source       = "../network"
+  source       = "../../network"
   ip_pool_list = var.ip_pool_list
   org_name     = var.organization
   tags         = var.tags
 }
+
 module "iks_version" {
-  source = "../modules/version"
+  source = "../../modules/version"
 
   org_name         = var.organization
   k8s_version_list = var.k8s_version_list
   tags             = var.tags
 }
 module "iks_addon" {
-  source            = "../modules/addon"
+  source            = "../../modules/addon"
   org_name          = var.organization
   addon_list        = var.addon_list
   addon_policy_name = var.addon_policy_name
   tags              = var.tags
 }
 module "iks_infra_provider" {
-  source     = "../modules/infra"
+  source     = "../../modules/infra"
   org_name   = var.organization
   infra_list = var.infra_list
   tags       = var.tags
