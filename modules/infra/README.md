@@ -37,7 +37,7 @@ These resources are created
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| infra\_list | n/a | <pre>list(object({<br>    name          = string<br>    instance_type = string<br>    device_name   = string<br>    cluster       = string<br>    interfaces    = list(string)<br>    datastore     = string<br>    passphrase    = string<br>    resource_pool = string<br><br>  }))</pre> | n/a | yes |
+| infra\_list | n/a | <pre>list(object({<br>    name          = string<br>    device_name   = string<br>    cluster       = string<br>    interfaces    = list(string)<br>    datastore     = string<br>    passphrase    = string<br>    resource_pool = string<br><br>  }))</pre> | n/a | yes |
 | org\_name | Intersight Organization name | `string` | n/a | yes |
 | tags | n/a | `list(map(string))` | `[]` | no |
 

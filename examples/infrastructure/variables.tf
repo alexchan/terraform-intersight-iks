@@ -64,7 +64,6 @@ variable "infra_list" {
   # sensitive = true
   type = list(object({
     name          = string
-    instance_type = string
     device_name   = string
     cluster       = string
     interfaces    = list(string)
